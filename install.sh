@@ -302,7 +302,7 @@ install_epel () {
 
 # Installs the Science repository for SLES 12
 install_sci () {
-  ${SUDO} zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/science/SLE_12/science.repo
+  ${SUDO} zypper addrepo https://download.opensuse.org/repositories/science/SLE_12/science.repo
 }
 
 do_download () {

@@ -97,7 +97,7 @@ sudo yum install R-${R_VERSION}-1-1.x86_64.rpm
 Enable the [Science](https://en.opensuse.org/openSUSE:Science_Repositories) repository (SLES 12 only):
 ```bash
 # SLES 12
-sudo zypper --gpg-auto-import-keys addrepo https://download.opensuse.org/repositories/science/SLE_12/science.repo
+sudo zypper addrepo https://download.opensuse.org/repositories/science/SLE_12/science.repo
 ```
 
 Download the rpm package:
