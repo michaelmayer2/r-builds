@@ -63,6 +63,9 @@ wget https://cdn.rstudio.com/r/debian-9/pkgs/r-${R_VERSION}_1_amd64.deb
 
 # Debian 10
 wget https://cdn.rstudio.com/r/debian-10/pkgs/r-${R_VERSION}_1_amd64.deb
+
+# Debian 11
+wget https://cdn.rstudio.com/r/debian-11/pkgs/r-${R_VERSION}_1_amd64.deb
 ```
 
 Then install the package:
@@ -228,7 +231,7 @@ environment:
   # snip
   JOB_DEFINITION_ARN_debian_9:
     Ref: rBuildsBatchJobDefinitionDebian9
-  SUPPORTED_PLATFORMS: ubuntu-1604,ubuntu-1804,debian-9,debian-10,centos-7,centos-8,opensuse-42,opensuse-15
+  SUPPORTED_PLATFORMS: ubuntu-1604,ubuntu-1804,debian-9,debian-10,debian-11,centos-7,centos-8,opensuse-42,opensuse-15
 ```
 
 ### Makefile
