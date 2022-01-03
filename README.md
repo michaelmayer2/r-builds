@@ -7,7 +7,7 @@ The R language is open source, please see the official documentation at https://
 These binaries are not a replacement to existing binary distributions for R.
 The binaries were built with the following considerations:
 - They use a minimal set of [build and runtime dependencies](builder).
-- They are designed to be used side-by-side, e.g., on [RStudio Server Pro](https://docs.rstudio.com/ide/server-pro/r-versions.html#using-multiple-versions-of-r-concurrently).
+- They are designed to be used side-by-side, e.g., on [RStudio Workbench](https://docs.rstudio.com/ide/server-pro/r_versions/using_multiple_versions_of_r.html).
 - They give users a consistent option for accessing R across different Linux distributions.
 
 These binaries have been extensively tested, and are used in production everyday
@@ -41,7 +41,7 @@ bash -c "$(curl -L https://rstd.io/r-install)"
 Define the version of R that you want to install. Available versions
 of R can be found here: https://cdn.rstudio.com/r/versions.json
 ```bash
-R_VERSION=3.5.3
+R_VERSION=4.1.2
 ```
 
 ### Download and install R
