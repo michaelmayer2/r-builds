@@ -30,6 +30,7 @@ RUN zypper --non-interactive --gpg-auto-import-keys -n install \
     libpng-devel \
     libtiff-devel \
     make \
+    openblas-devel \
     pango-devel \
     pcre-devel \
     pcre2-devel \

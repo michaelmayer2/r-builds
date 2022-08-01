@@ -27,7 +27,7 @@ fpm \
   -d gcc \
   -d gfortran \
   -d libbz2-dev \
-  -d libblas-dev \
+  -d libopenblas-dev \
   -d libc6 \
   -d libcairo2 \
   -d libcurl4 \

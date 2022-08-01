@@ -27,7 +27,6 @@ fpm \
   -d gcc \
   -d gfortran \
   -d libbz2-dev \
-  -d libblas-dev \
   -d libc6 \
   -d libcairo2 \
   -d libcurl4 \
@@ -37,6 +36,7 @@ fpm \
   -d libjpeg8 \
   -d liblapack-dev \
   -d liblzma-dev \
+  -d libopenblas-dev \
   -d libpango-1.0-0 \
   -d libpangocairo-1.0-0 \
   -d libpaper-utils \

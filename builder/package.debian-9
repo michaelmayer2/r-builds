@@ -35,7 +35,7 @@ fpm \
   -d libgomp1 \
   -d libicu-dev \
   -d liblzma-dev \
-  -d libopenblas-dev \
+  -d libopenblas-base \
   -d libpango-1.0-0 \
   -d libpangocairo-1.0-0 \
   -d libpaper-utils \
