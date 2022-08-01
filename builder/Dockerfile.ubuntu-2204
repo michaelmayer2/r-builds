@@ -13,6 +13,15 @@ RUN pip3 install awscli
 
 RUN gem install fpm
 
+# OpenBLAS
+CONFIGURE_OPTIONS="
+    --enable-R-shlib \
+    --with-tcltk \
+    --enable-memory-profiling \
+    --with-x \
+    --with-blas=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -lblas\" \
+    --with-lapack=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -llapack\""
+
 RUN chmod 0777 /opt
 
 # Make sure that patching the OS does not break Java

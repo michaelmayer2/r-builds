@@ -12,6 +12,15 @@ RUN set -x \
 
 RUN pip3 install awscli
 
+# OpenBLAS
+CONFIGURE_OPTIONS="
+    --enable-R-shlib \
+    --with-tcltk \
+    --enable-memory-profiling \
+    --with-x \
+    --with-blas=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -lblas\" \
+    --with-lapack=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -llapack\""
+
 RUN chmod 0777 /opt
 
 # Pin fpm to avoid git dependency in 1.12.0

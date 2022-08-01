@@ -74,6 +74,15 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN gem install ffi:1.12.2 fpm:1.11.0 && \
     ln -s /usr/bin/fpm.ruby2.1 /usr/local/bin/fpm
 
+# Add Support for OpenBLAS
+ENV CONFIGURE_OPTIONS="\
+    --enable-R-shlib \
+    --with-tcltk \
+    --enable-memory-profiling \
+    --with-x \
+    --with-blas=\"-L /usr/lib64 -lopenblas\"
+    --with-lapack"
+
 RUN chmod 0777 /opt
 
 # Make sure that patching the OS does not break Java
