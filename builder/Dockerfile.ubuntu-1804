@@ -17,13 +17,16 @@ RUN gem install fpm:1.11.0
 RUN chmod 0777 /opt
 
 # OpenBLAS
-CONFIGURE_OPTIONS="
+ENV BLAS_LIBS="-L /usr/lib/x86_64-linux-gnu/openblas/ -lblas"
+ENV LAPACK_LIBS="-L /usr/lib/x86_64-linux-gnu/openblas/ -llapack"
+
+ENV CONFIGURE_OPTIONS="\
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x \
-    --with-blas=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -lblas\" \
-    --with-lapack=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -llapack\""
+    --with-blas \
+    --with-lapack"
 
 # Make sure that patching the OS does not break Java
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/

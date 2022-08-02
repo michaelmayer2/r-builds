@@ -13,13 +13,16 @@ RUN set -x \
 RUN pip install awscli
 
 # OpenBLAS
-CONFIGURE_OPTIONS="
+ENV BLAS_LIBS="-L /usr/lib/openblas-base/ -lblas"
+ENV LAPACK_LIBS="-L /usr/lib/openblas-base/ -llapack"
+
+ENV CONFIGURE_OPTIONS="\
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x \
-    --with-blas=\"-L /usr/lib/openblas-base/ -lblas\" \
-    --with-lapack=\"-L /usr/lib/openblas-base/ -llapack\""
+    --with-blas \
+    --with-lapack"
 
 RUN chmod 0777 /opt
 

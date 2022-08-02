@@ -77,12 +77,14 @@ RUN gem install fpm:1.11.0 && \
     ln -s /usr/bin/fpm.ruby2.5 /usr/local/bin/fpm
 
 # Add Support for OpenBLAS
+ENV BLAS_LIBS="-L/usr/lib64 -lopenblas"
+
 ENV CONFIGURE_OPTIONS="\
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x \
-    --with-blas=\"-L /usr/lib64 -lopenblas\"
+    --with-blas \
     --with-lapack"
 
 RUN chmod 0777 /opt

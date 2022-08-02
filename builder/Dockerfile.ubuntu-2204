@@ -14,13 +14,16 @@ RUN pip3 install awscli
 RUN gem install fpm
 
 # OpenBLAS
-CONFIGURE_OPTIONS="
+ENV BLAS_LIBS='-L/usr/lib/x86_64-linux-gnu/openblas/ -lblas'
+ENV LAPACK_LIBS='-L/usr/lib/x86_64-linux-gnu/openblas/ -llapack'
+
+ENV CONFIGURE_OPTIONS="\
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x \
-    --with-blas=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -lblas\" \
-    --with-lapack=\"-L /usr/lib/x86_64-linux-gnu/openblas/ -llapack\""
+    --with-blas \
+    --with-lapack"
 
 RUN chmod 0777 /opt
 

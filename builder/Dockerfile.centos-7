@@ -57,13 +57,16 @@ RUN gem install ffi:1.12.2 fpm:1.11.0
 
 RUN chmod 0777 /opt
 
+# OpenBLAS definition 
+ENV BLAS_LIBS="-L/usr/lib64 -lopenblasp"
+
 # Configure flags for CentOS 7 that don't use the defaults in build.sh
 ENV CONFIGURE_OPTIONS="\
     --enable-R-shlib \
     --with-tcltk \
     --enable-memory-profiling \
     --with-x \
-    --with-blas=-lopenblas \
+    --with-blas \
     --with-system-valgrind-headers \
     --with-tcl-config=/usr/lib64/tclConfig.sh \
     --with-tk-config=/usr/lib64/tkConfig.sh \
